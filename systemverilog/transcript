@@ -1,0 +1,479 @@
+# //  Questa Sim-64
+# //  Version 10.5c linux_x86_64 Jul 20 2016
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+vlog half.sv
+# QuestaSim-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
+# Start time: 20:40:56 on Feb 18,2020
+# vlog -reportprogress 300 half.sv 
+# -- Compiling module ha
+# 
+# Top level modules:
+# 	ha
+# End time: 20:40:57 on Feb 18,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vlog full.sv
+# QuestaSim-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
+# Start time: 20:41:05 on Feb 18,2020
+# vlog -reportprogress 300 full.sv 
+# -- Compiling module fa
+# 
+# Top level modules:
+# 	fa
+# End time: 20:41:05 on Feb 18,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog half.sv
+# QuestaSim-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
+# Start time: 20:41:20 on Feb 18,2020
+# vlog -reportprogress 300 half.sv 
+# -- Compiling module ha
+# 
+# Top level modules:
+# 	ha
+# End time: 20:41:20 on Feb 18,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog full.sv
+# QuestaSim-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
+# Start time: 20:41:22 on Feb 18,2020
+# vlog -reportprogress 300 full.sv 
+# -- Compiling module fa
+# 
+# Top level modules:
+# 	fa
+# End time: 20:41:22 on Feb 18,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim full.sv
+# OpenFile full.sv
+vsim fa
+# vsim fa 
+# Start time: 20:42:04 on Feb 18,2020
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: full.sv(6): (vopt-2685) [TFMPC] - Too few port connections for 'h3'.  Expected 4, found 3.
+# ** Warning: full.sv(6): (vopt-2718) [TFMPC] - Missing connection for port 'cout'.
+# Loading sv_std.std
+# Loading work.fa(fast)
+add wave *
+force -freeze sim:/fa/a 1'b1 0
+force -freeze sim:/fa/b 1'b0 0
+force -freeze sim:/fa/cin 1'b1 0
+run
+force -freeze sim:/fa/b 1'b1 0
+run
+vlog TD.sv
+# QuestaSim-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
+# Start time: 20:48:12 on Feb 18,2020
+# vlog -reportprogress 300 TD.sv 
+# -- Compiling module test_design
+# 
+# Top level modules:
+# 	test_design
+# End time: 20:48:12 on Feb 18,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog tb_design.sv
+# QuestaSim-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
+# Start time: 20:48:41 on Feb 18,2020
+# vlog -reportprogress 300 tb_design.sv 
+# -- Compiling module design_tb
+# 
+# Top level modules:
+# 	design_tb
+# End time: 20:48:41 on Feb 18,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim design_tb
+# End time: 20:49:04 on Feb 18,2020, Elapsed time: 0:07:00
+# Errors: 0, Warnings: 2
+# vsim design_tb 
+# Start time: 20:49:04 on Feb 18,2020
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.design_tb(fast)
+vlog tb_design.sv
+# QuestaSim-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
+# Start time: 20:49:53 on Feb 18,2020
+# vlog -reportprogress 300 tb_design.sv 
+# -- Compiling module design_tb
+# 
+# Top level modules:
+# 	design_tb
+# End time: 20:49:53 on Feb 18,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim design_tb
+# End time: 20:49:57 on Feb 18,2020, Elapsed time: 0:00:53
+# Errors: 0, Warnings: 0
+# vsim design_tb 
+# Start time: 20:49:57 on Feb 18,2020
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.design_tb(fast)
+vsim -novopt design_tb
+# End time: 20:50:18 on Feb 18,2020, Elapsed time: 0:00:21
+# Errors: 0, Warnings: 0
+# vsim -novopt design_tb 
+# Start time: 20:50:18 on Feb 18,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /home/sandeepani/Batches/VLSI_106/wilson/systemverilog/work.design_tb
+# Loading sv_std.std
+# Loading work.design_tb
+# Refreshing /home/sandeepani/Batches/VLSI_106/wilson/systemverilog/work.test_design
+# Loading work.test_design
+add wave *
+run -all
+vlog tb_design.sv
+# QuestaSim-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
+# Start time: 20:53:46 on Feb 18,2020
+# vlog -reportprogress 300 tb_design.sv 
+# -- Compiling module design_tb
+# 
+# Top level modules:
+# 	design_tb
+# End time: 20:53:46 on Feb 18,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog tb_design.sv
+# QuestaSim-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
+# Start time: 20:53:55 on Feb 18,2020
+# vlog -reportprogress 300 tb_design.sv 
+# -- Compiling module design_tb
+# 
+# Top level modules:
+# 	design_tb
+# End time: 20:53:55 on Feb 18,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim design_tb
+# End time: 20:54:00 on Feb 18,2020, Elapsed time: 0:03:42
+# Errors: 0, Warnings: 1
+# vsim design_tb 
+# Start time: 20:54:00 on Feb 18,2020
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.design_tb(fast)
+vsim -novopt design_tb
+# End time: 20:54:14 on Feb 18,2020, Elapsed time: 0:00:14
+# Errors: 0, Warnings: 0
+# vsim -novopt design_tb 
+# Start time: 20:54:14 on Feb 18,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /home/sandeepani/Batches/VLSI_106/wilson/systemverilog/work.design_tb
+# Loading sv_std.std
+# Loading work.design_tb
+# Loading work.test_design
+add wave *
+run -all
+vlog mux_ran.sv
+# QuestaSim-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
+# Start time: 21:30:39 on Feb 18,2020
+# vlog -reportprogress 300 mux_ran.sv 
+# -- Compiling module mux4_to_1
+# 
+# Top level modules:
+# 	mux4_to_1
+# End time: 21:30:39 on Feb 18,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog tb_ran.sv
+# QuestaSim-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
+# Start time: 21:31:07 on Feb 18,2020
+# vlog -reportprogress 300 tb_ran.sv 
+# -- Compiling module ran_tb
+# 
+# Top level modules:
+# 	ran_tb
+# End time: 21:31:07 on Feb 18,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim ran_tb
+# End time: 21:31:16 on Feb 18,2020, Elapsed time: 0:37:02
+# Errors: 0, Warnings: 1
+# vsim ran_tb 
+# Start time: 21:31:16 on Feb 18,2020
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.ran_tb(fast)
+vsim -novopt ran_tb
+# End time: 21:31:41 on Feb 18,2020, Elapsed time: 0:00:25
+# Errors: 0, Warnings: 0
+# vsim -novopt ran_tb 
+# Start time: 21:31:41 on Feb 18,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /home/sandeepani/Batches/VLSI_106/wilson/systemverilog/work.ran_tb
+# Loading sv_std.std
+# Loading work.ran_tb
+# Refreshing /home/sandeepani/Batches/VLSI_106/wilson/systemverilog/work.mux4_to_1
+# Loading work.mux4_to_1
+add wave *
+run -all
+#                    0{i,sel}= x,y=x
+#                    5{i,sel}=36,y=1
+#                   10{i,sel}= 1,y=0
+#                   15{i,sel}= 9,y=1
+#                   20{i,sel}=35,y=1
+#                   25{i,sel}=13,y=1
+#                   35{i,sel}=37,y=0
+#                   40{i,sel}=18,y=1
+#                   45{i,sel}= 1,y=0
+#                   50{i,sel}=13,y=1
+#                   55{i,sel}=54,y=1
+#                   60{i,sel}=61,y=1
+#                   65{i,sel}=45,y=1
+#                   70{i,sel}=12,y=1
+#                   75{i,sel}=57,y=1
+#                   80{i,sel}= 6,y=0
+#                   85{i,sel}= 5,y=0
+#                   90{i,sel}=42,y=0
+#                   95{i,sel}=37,y=0
+#                  100{i,sel}=55,y=1
+#                  105{i,sel}=18,y=1
+#                  110{i,sel}=15,y=0
+#                  115{i,sel}=50,y=1
+#                  120{i,sel}=14,y=0
+#                  125{i,sel}=40,y=0
+#                  130{i,sel}= 5,y=0
+#                  135{i,sel}=28,y=1
+#                  140{i,sel}=61,y=1
+#                  145{i,sel}=45,y=1
+#                  150{i,sel}=37,y=0
+#                  155{i,sel}=35,y=1
+#                  160{i,sel}=10,y=0
+#                  165{i,sel}= 0,y=0
+#                  170{i,sel}=32,y=0
+#                  175{i,sel}=42,y=0
+#                  180{i,sel}=29,y=1
+#                  185{i,sel}=22,y=1
+#                  190{i,sel}=19,y=0
+#                  195{i,sel}=13,y=1
+#                  200{i,sel}=19,y=0
+#                  205{i,sel}=43,y=1
+#                  210{i,sel}=21,y=0
+#                  215{i,sel}= 2,y=0
+#                  220{i,sel}=46,y=0
+#                  225{i,sel}=29,y=1
+#                  230{i,sel}=15,y=0
+#                  235{i,sel}=35,y=1
+#                  240{i,sel}=10,y=0
+#                  250{i,sel}=60,y=1
+#                  255{i,sel}=50,y=1
+#                  260{i,sel}=10,y=0
+#                  265{i,sel}= 1,y=0
+#                  270{i,sel}=24,y=0
+#                  275{i,sel}=56,y=0
+#                  280{i,sel}= 9,y=1
+#                  285{i,sel}=43,y=1
+#                  290{i,sel}=54,y=1
+#                  295{i,sel}= 6,y=0
+#                  300{i,sel}=46,y=0
+#                  305{i,sel}=60,y=1
+#                  310{i,sel}=42,y=0
+#                  315{i,sel}=11,y=0
+#                  320{i,sel}=49,y=0
+quit -sim
+# End time: 21:41:47 on Feb 18,2020, Elapsed time: 0:10:06
+# Errors: 0, Warnings: 1
+vlog tb_ran.sv
+# QuestaSim-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
+# Start time: 21:42:04 on Feb 18,2020
+# vlog -reportprogress 300 tb_ran.sv 
+# -- Compiling module ran_tb
+# 
+# Top level modules:
+# 	ran_tb
+# End time: 21:42:04 on Feb 18,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim ran_tb
+# vsim ran_tb 
+# Start time: 21:42:09 on Feb 18,2020
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.ran_tb(fast)
+# ** Warning: (vsim-PLI-3003) tb_ran.sv(15): [TOFD] - System task or function '$random_range' is not defined.
+#    Time: 0 ns  Iteration: 0  Instance: /ran_tb File: tb_ran.sv
+# ** Warning: (vsim-PLI-3003) tb_ran.sv(18): [TOFD] - System task or function '$random_range' is not defined.
+#    Time: 0 ns  Iteration: 0  Instance: /ran_tb File: tb_ran.sv
+# ** Warning: (vsim-PLI-3003) tb_ran.sv(21): [TOFD] - System task or function '$random_range' is not defined.
+#    Time: 0 ns  Iteration: 0  Instance: /ran_tb File: tb_ran.sv
+# ** Warning: (vsim-PLI-3003) tb_ran.sv(24): [TOFD] - System task or function '$random_range' is not defined.
+#    Time: 0 ns  Iteration: 0  Instance: /ran_tb File: tb_ran.sv
+vsim -novopt ran_tb
+# End time: 21:42:20 on Feb 18,2020, Elapsed time: 0:00:11
+# Errors: 0, Warnings: 4
+# vsim -novopt ran_tb 
+# Start time: 21:42:20 on Feb 18,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /home/sandeepani/Batches/VLSI_106/wilson/systemverilog/work.ran_tb
+# Loading sv_std.std
+# Loading work.ran_tb
+# Loading work.mux4_to_1
+# ** Warning: (vsim-PLI-3003) tb_ran.sv(15): [TOFD] - System task or function '$random_range' is not defined.
+#    Time: 0 ns  Iteration: 0  Instance: /ran_tb File: tb_ran.sv
+# ** Warning: (vsim-PLI-3003) tb_ran.sv(18): [TOFD] - System task or function '$random_range' is not defined.
+#    Time: 0 ns  Iteration: 0  Instance: /ran_tb File: tb_ran.sv
+# ** Warning: (vsim-PLI-3003) tb_ran.sv(21): [TOFD] - System task or function '$random_range' is not defined.
+#    Time: 0 ns  Iteration: 0  Instance: /ran_tb File: tb_ran.sv
+# ** Warning: (vsim-PLI-3003) tb_ran.sv(24): [TOFD] - System task or function '$random_range' is not defined.
+#    Time: 0 ns  Iteration: 0  Instance: /ran_tb File: tb_ran.sv
+add wave *
+run -all
+#                    0{i,sel}= x,y=x
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+#                    5{i,sel}= 0,y=0
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(18): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(21): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(24): Cannot execute undefined system task/function '$random_range'
+quit -sim
+# End time: 21:51:39 on Feb 18,2020, Elapsed time: 0:09:19
+# Errors: 64, Warnings: 5
+vlog tb_ran.sv
+# QuestaSim-64 vlog 10.5c Compiler 2016.07 Jul 20 2016
+# Start time: 21:52:13 on Feb 18,2020
+# vlog -reportprogress 300 tb_ran.sv 
+# -- Compiling module ran_tb
+# 
+# Top level modules:
+# 	ran_tb
+# End time: 21:52:13 on Feb 18,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim ran_tb
+# vsim ran_tb 
+# Start time: 21:52:18 on Feb 18,2020
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.ran_tb(fast)
+# ** Warning: (vsim-PLI-3003) tb_ran.sv(15): [TOFD] - System task or function '$random_range' is not defined.
+#    Time: 0 ns  Iteration: 0  Instance: /ran_tb File: tb_ran.sv
+vsim -novopt ran_tb
+# End time: 21:52:29 on Feb 18,2020, Elapsed time: 0:00:11
+# Errors: 0, Warnings: 1
+# vsim -novopt ran_tb 
+# Start time: 21:52:29 on Feb 18,2020
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Refreshing /home/sandeepani/Batches/VLSI_106/wilson/systemverilog/work.ran_tb
+# Loading sv_std.std
+# Loading work.ran_tb
+# Loading work.mux4_to_1
+# ** Warning: (vsim-PLI-3003) tb_ran.sv(15): [TOFD] - System task or function '$random_range' is not defined.
+#    Time: 0 ns  Iteration: 0  Instance: /ran_tb File: tb_ran.sv
+add wave *
+run -all
+#                    0{i,sel}= x,y=x
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+#                    5{i,sel}= 0,y=0
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+# ** Error (suppressible): (vsim-12023) tb_ran.sv(15): Cannot execute undefined system task/function '$random_range'
+#                   85{i,sel}=22,y=1
+#                  110{i,sel}=18,y=1
+#                  115{i,sel}=30,y=1
+#                  120{i,sel}=23,y=0
+#                  125{i,sel}=26,y=1
+#                  135{i,sel}=20,y=1
+#                  140{i,sel}=31,y=0
+#                  145{i,sel}=22,y=1
+#                  150{i,sel}=21,y=0
+#                  155{i,sel}=20,y=1
+#                  160{i,sel}=30,y=1
+#                  165{i,sel}=45,y=1
+#                  170{i,sel}=43,y=1
+#                  175{i,sel}=37,y=0
+#                  180{i,sel}=35,y=1
+#                  185{i,sel}=32,y=0
+#                  190{i,sel}=37,y=0
+#                  205{i,sel}=41,y=1
+#                  210{i,sel}=45,y=1
+#                  215{i,sel}=42,y=0
+#                  220{i,sel}=40,y=0
+#                  225{i,sel}=43,y=1
+#                  230{i,sel}=38,y=0
+#                  235{i,sel}=41,y=1
+#                  245{i,sel}=48,y=0
+#                  255{i,sel}=62,y=1
+#                  260{i,sel}=52,y=1
+#                  265{i,sel}=62,y=1
+#                  270{i,sel}=48,y=0
+#                  275{i,sel}=55,y=1
+#                  280{i,sel}=53,y=0
+#                  285{i,sel}=55,y=1
+#                  290{i,sel}=56,y=0
+#                  295{i,sel}=49,y=0
+#                  300{i,sel}=50,y=1
+#                  305{i,sel}=51,y=1
+#                  310{i,sel}=52,y=1
+#                  315{i,sel}=51,y=1
+#                  320{i,sel}=58,y=1
